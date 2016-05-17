@@ -34,7 +34,7 @@ import scipy.io as sio
 # Sb - potential energy spectrum (buoyancy spectrum normalized by N^2)
 
 # This reads in a set of spectra saved in a numpy archive.
-f = np.load('test.npz')
+f = np.load('start08_strat.npz')
 k = f['k']
 Su = f['Su']
 Sv = f['Sv']
@@ -42,7 +42,7 @@ Sw = f['Sw']
 Sb = f['Sb']
 
 # This reads in a set of spectra saved in a MATLAB file. [uncomment for use]
-#f = sio.loadmat('test.mat')
+#f = sio.loadmat('start08_strat.mat')
 #k = f['k'][0]
 #Su = f['Su'][0]
 #Sv = f['Sv'][0]
