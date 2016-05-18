@@ -30,10 +30,12 @@ load start08_strat.mat
 K = (Su+Sv)/2;
 Kphi = zeros(size(k));
 Kpsi = zeros(size(k));
-for i = 1:length(k)
+for i = 1:length(k)-1
   Kphi(i) = (Su(i)-trapz(log(k(i:end)), k(i:end).*(Sv(i:end)-Su(i:end)))/k(i))/2;
   Kpsi(i) = (Sv(i)+trapz(log(k(i:end)), k(i:end).*(Sv(i:end)-Su(i:end)))/k(i))/2;
 end
+Kphi(end) = Su(end)/2
+Kpsi(end) = Sv(end)/2
 
 % Hydrostatic wave-vortex decomposition
 % This decomposes the total energy E = 1/2(Su+Sv+Sb) into a wave component Ew
@@ -52,20 +54,20 @@ Ev = E-Ew;
 
 % Plot the Helmholtz decomposition result.
 figure()
-hold on
 loglog(k, K)
+hold on
 loglog(k, Kpsi)
 loglog(k, Kphi)
 xlabel('wavenumber [rad/m]')
 ylabel('power spectral density [kg/s^2]')
-legend('horizontal kinetic energy', 'rotational component', 'divergent component')
+legend('horizontal kinetic energy', 'rotational component', 'divergent component', 'location', 'SouthWest')
 
 % Plot the wave-vortex decomposition result.
 figure()
-hold on
 loglog(k, E)
+hold on
 loglog(k, Ew)
 loglog(k, Ev)
 xlabel('wavenumber [rad/m]')
 ylabel('power spectral density [kg/s^2]')
-legend('total energy', 'diagnosed wave component', 'residual vortical component')
+legend('total energy', 'diagnosed wave component', 'residual vortical component', 'location', 'SouthWest')
