@@ -1,0 +1,2 @@
+# Wave–vortex decomposition
+This code applies the Helmholtz and wave-vortex decompositions developed in [Bühler et al. (JFM, 2014)](http://dx.doi.org/10.1017/jfm.2014.488) to given velocity and buoyancy wavenumber spectra. These spectra can be read in either from a numpy archive or a MATLAB data file (see comments in `wv-dec.py`). Both a hydrostatic and a nonhydrostatic version of the decomposition is provided. If vertical velocity spectra are available, the nonhydrostatic version can be used, as in the example that is supplied with this code.

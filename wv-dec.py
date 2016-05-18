@@ -15,13 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with WV-dec. If not, see <http://www.gnu.org/licenses/>.
 
-# This code applies the Helmholtz and wave-vortex decompositions developed in
-# Buehler et al. (JFM, 2014) to given velocity and buoyancy wavenumbe spectra.
-# These can be read in either from a numpy archive or a MATLAB data file (see
-# below). Both a hydrostatic and a nonhydrostatic version of the decomposition
-# is given. If vertical velocity spectra are available, the nonhydrostatic
-# version can be used, as in the example that is supplied with this code.
-
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
