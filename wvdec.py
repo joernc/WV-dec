@@ -44,7 +44,9 @@ Sb = f['Sb']
 
 # Helmholtz decomposition
 # This decomposes the horizontal kinetic energy K = 1/2(Su+Sv) into a rotational
-# part Kpsi and a divergent part Kphi. The integration is performed using a
+# part Kpsi and a divergent part Kphi. This formulation uses equations (2.11)
+# and (2.12) of Lindborg (2015, JFM), which follow directly from (2.27), (2.30),
+# and (2.31) of Buehler et al. (2014, JFM). The integration is performed using a
 # logarithmic integration variable.
 K = (Su+Sv)/2
 Kphi = np.empty(k.size)
